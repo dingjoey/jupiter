@@ -1,0 +1,47 @@
+### Makefile语法 ###
+
+- Makfile组成部分
+    1. 变量设置
+    2. 规则
+    3. 命令
+- 引用shell中的变量要转义$；即$${SHELL_VAR}
+- "automatic" variables 
+    - $@表示当前目标
+    - $+表示当前目标的依赖列表
+- -C command-line option tells make to change to the specified directory
+- .PHONY规则指定改命令不会去查找任何文件依赖，每次都执行
+
+### GNU coding standards ###
+
+- 需要提供一系列的rule
+    - 所有：all programname
+    - 单元测试： check
+    - 源码分发打包/检查 ： dist distcheck
+    - 清理：clean
+- 需要提供和路径相关的变量
+    - prefix          = /usr/local
+    - exec-prefix     = $(prefix)
+    - bindir          = $(exec_prefix)/bin
+    - sbindir         = $(exec_prefix)/sbin
+    - libexecdir      = $(exec_prefix)/libexec
+    - datarootdir     = $(prefix)/share
+    - datadir         = $(datarootdir)
+    - sysconfdir      = $(prefix)/etc
+    - sharedstatedir  = $(prefix)/comlocal
+    - statedir   = $(prefix)/var
+    - includedir      = $(prefix)/include
+    - oldincludedir   = /usr/include
+    - docdir          = $(datarootdir)/doc/$(package)
+    - libdir          = $(exec_prefix)/lib
+- 需要提供和编译相关的变量
+    - CC         - the C compiler
+    - CFLAGS     - C compiler flags
+    - CXX        - the C++ compiler
+    - CXXFLAGS   - C++ compiler flags  
+    - LDFLAGS    - linker flags
+    - CPPFLAGS   - C preprocessor flags
+
+### 样本工程 ###
+
+- jupiter
+
