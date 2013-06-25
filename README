@@ -8,8 +8,11 @@
 - "automatic" variables 
     - $@表示当前目标
     - $+表示当前目标的依赖列表
+    - $<表示第一个依赖文件
 - -C command-line option tells make to change to the specified directory
 - .PHONY规则指定改命令不会去查找任何文件依赖，每次都执行
+- .c.o: #表示缺省规则表示所有的 .o文件都是依赖与相应的.c文件的
+    gcc -c $< -o $@
 
 ### GNU coding standards ###
 
